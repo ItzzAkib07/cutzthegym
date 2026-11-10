@@ -1,0 +1,165 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-primary: #080808;
+    --bg-secondary: #111111;
+    --bg-card: #171717;
+    --gold-primary: #C9A04A;
+    --gold-highlight: #E6C36A;
+    --silver-metallic: #D1D1D1;
+    --text-primary: #FFFFFF;
+    --text-body: #D1D1D1;
+    --text-supporting: #B8B8B8;
+    --text-muted: #A3A3A3;
+    --border-gold: rgba(201, 160, 74, 0.25);
+  }
+
+  html {
+    background-color: #080808;
+    color: #FFFFFF;
+    font-family: 'Manrope', system-ui, sans-serif;
+  }
+
+  body {
+    background-color: #080808;
+    color: #FFFFFF;
+    overflow-x: hidden;
+    font-family: 'Manrope', system-ui, sans-serif;
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #080808;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #242424;
+    border-radius: 4px;
+    border: 1px solid rgba(201, 160, 74, 0.2);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #C9A04A;
+  }
+}
+
+/* ========================================================================= */
+/* FLUID CLAMP TYPOGRAPHY HIERARCHY SYSTEM (PART 2)                          */
+/* ========================================================================= */
+@layer components {
+  /* 1. Display XL — Massive Hero Headlines */
+  .text-display-xl {
+    font-family: 'Anton', sans-serif;
+    font-size: clamp(2.75rem, 7.5vw, 6.75rem);
+    line-height: 0.95;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+  }
+
+  /* 2. Display LG — Page Heroes & Major Highlights */
+  .text-display-lg {
+    font-family: 'Anton', sans-serif;
+    font-size: clamp(2.25rem, 5vw, 4.25rem);
+    line-height: 1.0;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+  }
+
+  /* 3. Heading XL — Primary Section Headings */
+  .text-heading-xl {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    line-height: 1.05;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  /* 4. Heading LG — Secondary Section Headings & Card Titles */
+  .text-heading-lg {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(1.6rem, 2.8vw, 2.4rem);
+    line-height: 1.1;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  /* 5. Heading MD — Sub-headings & Feature Titles */
+  .text-heading-md {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(1.25rem, 2vw, 1.75rem);
+    line-height: 1.15;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  /* 6. Body LG — Lead paragraphs & Editorial Callouts */
+  .text-body-lg {
+    font-family: 'Manrope', sans-serif;
+    font-size: clamp(1.05rem, 1.25vw, 1.25rem);
+    line-height: 1.7;
+    font-weight: 400;
+  }
+
+  /* 7. Body MD — Standard body text */
+  .text-body-md {
+    font-family: 'Manrope', sans-serif;
+    font-size: clamp(0.925rem, 1vw, 1rem);
+    line-height: 1.65;
+    font-weight: 400;
+  }
+
+  /* 8. Body SM — Secondary descriptions & meta */
+  .text-body-sm {
+    font-family: 'Manrope', sans-serif;
+    font-size: clamp(0.8rem, 0.9vw, 0.875rem);
+    line-height: 1.55;
+    font-weight: 400;
+  }
+
+  /* 9. Eyebrow — Kicker badges & Sub-headings */
+  .text-eyebrow {
+    font-family: 'Manrope', sans-serif;
+    font-size: clamp(0.68rem, 0.8vw, 0.775rem);
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+  }
+
+  /* 10. Caption — Micro text, terms & credits */
+  .text-caption {
+    font-family: 'Manrope', sans-serif;
+    font-size: clamp(0.65rem, 0.75vw, 0.75rem);
+    line-height: 1.4;
+    font-weight: 400;
+  }
+
+  /* 11. Button Text — High-converting interface text */
+  .text-btn {
+    font-family: 'Manrope', sans-serif;
+    font-size: clamp(0.75rem, 0.85vw, 0.875rem);
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+}
+
+@layer utilities {
+  .text-glow {
+    text-shadow: 0 0 25px rgba(201, 160, 74, 0.45);
+  }
+  .silver-glow {
+    text-shadow: 0 0 25px rgba(214, 214, 214, 0.35);
+  }
+  .gold-border-gradient {
+    border-image: linear-gradient(135deg, #E6C36A, rgba(201,160,74,0.3), #9E7B2F) 1;
+  }
+  .bg-glass {
+    background: rgba(23, 23, 23, 0.82);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+  }
+}

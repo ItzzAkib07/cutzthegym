@@ -1,0 +1,30 @@
+/* Responsive & Accessibility Enhancements */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Touch device adjustments */
+@media (hover: none) and (pointer: coarse) {
+  .custom-cursor-follower {
+    display: none !important;
+  }
+}
+
+/* Prevent unwanted horizontal overflow on narrow devices */
+html, body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+/* Smooth Image Loading */
+img {
+  content-visibility: auto;
+}
+

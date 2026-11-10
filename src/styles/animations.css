@@ -1,0 +1,72 @@
+/* Custom Shimmer, Light Streaks and Metallic Sheen */
+@keyframes metallicShine {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-metallic-shine {
+  background: linear-gradient(
+    90deg,
+    rgba(214, 214, 214, 0.1) 0%,
+    rgba(255, 255, 255, 0.4) 50%,
+    rgba(214, 214, 214, 0.1) 100%
+  );
+  background-size: 200% 100%;
+  animation: metallicShine 4s infinite linear;
+}
+
+@keyframes goldPulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(201, 160, 74, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 35px rgba(201, 160, 74, 0.5);
+  }
+}
+
+.gold-glow-animated {
+  animation: goldPulseGlow 3s infinite ease-in-out;
+}
+
+/* Light beam streak */
+@keyframes lightStreak {
+  0% {
+    transform: translateX(-100%) skewX(-25deg);
+  }
+  100% {
+    transform: translateX(300%) skewX(-25deg);
+  }
+}
+
+.light-streak {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.15),
+    transparent
+  );
+  pointer-events: none;
+  animation: lightStreak 5s infinite;
+}
+
+/* Custom cursor styling */
+.custom-cursor-follower {
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  border-radius: 50%;
+  transition: transform 0.15s ease-out, width 0.2s ease, height 0.2s ease, background-color 0.2s ease;
+  transform: translate(-50%, -50%);
+}
+
